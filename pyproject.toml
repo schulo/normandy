@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools >= 69.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "overlord"
+authors = [{ name = "Oliver Schultz", email = "oschultz@alumni.usc.edu" }]
+description = "Python package with standardized configuration"
+readme = "README.md"
+requires-python = ">=3.9.6"
+license = { text = "BSD-3-Clause" }
+classifiers = []
+dependencies = ["numpy==1.26.2"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools==7.3.0",
+    "build==1.0.3",
+    "twine==4.0.2",
+    "pytest==7.4.3",
+    "pytest-cov==4.1.0",
+]
+doc = ["Sphinx==7.2.6"]
+
+[tool.setuptools.dynamic]
+version = { attr = "overlord.VERSION" }
+
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 88
+skip_gitignore = true
+skip_glob = ["tests/data", "profiling"]
+
+[tool.black]
+line-length = 88
