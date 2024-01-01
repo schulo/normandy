@@ -21,6 +21,7 @@ dev = [
     "build==1.0.3",
     "twine==4.0.2",
     "pytest==7.4.3",
+    "pylint==3.0.3",
     "pytest-cov==4.1.0",
 ]
 doc = ["Sphinx==7.2.6"]
@@ -37,3 +38,11 @@ skip_glob = ["tests/data", "profiling"]
 
 [tool.black]
 line-length = 88
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.pyright]
+include = ["src"]
+reportMissingImports = true
+reportMissingTypeStubs = false

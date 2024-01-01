@@ -11,6 +11,8 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "black-formatter.importStrategy": "fromEnvironment",
+    "pylint.importStrategy": "fromEnvironment",
+    "isort.importStrategy": "fromEnvironment",
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit"
     },
