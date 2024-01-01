@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools >= 69.0.3"]
+requires = ["setuptools >= 69.0.3", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "overlord"
-authors = [{ name = "Oliver Schultz", email = "oschultz@alumni.usc.edu" }]
+authors = [{ name = "Oliver Schultz" }]
 description = "Python package with standardized configuration"
 readme = "README.md"
 requires-python = ">=3.9.6"
@@ -15,6 +15,8 @@ dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
+    "black==23.12.1",
+    "isort==5.13.2",
     "pip-tools==7.3.0",
     "build==1.0.3",
     "twine==4.0.2",
@@ -23,8 +25,8 @@ dev = [
 ]
 doc = ["Sphinx==7.2.6"]
 
-[tool.setuptools.dynamic]
-version = { attr = "overlord.VERSION" }
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
 
 [tool.isort]
 atomic = true
